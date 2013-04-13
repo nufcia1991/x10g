@@ -1,0 +1,10 @@
+x10g - GTK application for controlling X10 devices.
+
+Installation:
+$ cd x10g
+$ make
+$ ./x10g
+
+Make sure that you are running application as user which have
+access to serial port(s) - in particular, port, where X10 controller
+is connected.
