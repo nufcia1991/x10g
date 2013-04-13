@@ -1,5 +1,13 @@
 x10g - GTK application for controlling X10 devices.
 
+Features:
+* Currently, application supports CM11A controller
+  with serial port interface (USB-to-serial converters
+  are of course supported too).
+
+* On/off, light dimming and time synchronization are
+  supported.
+
 Installation:
 $ cd x10g
 $ make
