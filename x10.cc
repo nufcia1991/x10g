@@ -25,6 +25,9 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <cmath>
 #include <exception>
 #include <stdexcept>
@@ -43,7 +46,7 @@ namespace X10
 	/*
 	 * X10Housecode
 	 */
-	
+
 	X10Housecode::X10Housecode() { from_char('A'); }
 	X10Housecode::X10Housecode(char housecode) { from_char(housecode); }
 	X10Housecode::~X10Housecode() { }

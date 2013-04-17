@@ -35,9 +35,9 @@ namespace X10
 {
 	SettingsDialog::SettingsDialog(const std::string &device_path, const std::string &housecode, int maxretry) :
 		m_table(3, 2, false),
-		m_device_path_label(_("¦cie¿ka do urz±dzenia X10:")),
+		m_device_path_label(_("ÅšcieÅ¼ka do urzÄ…dzenia X10:")),
 		m_housecode_label(_("Housecode:")),
-		m_maxretry_label(_("Liczba powtórzeñ transmisji:"))
+		m_maxretry_label(_("Liczba powtÃ³rzeÅ„ transmisji:"))
 	{
 		set_title("Ustawienia");
 		set_default_size(300, 100);

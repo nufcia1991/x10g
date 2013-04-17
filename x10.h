@@ -49,7 +49,9 @@
 #define X10_COMMAND_DIM			0x4
 #define X10_COMMAND_BRIGHT		0x5
 
+#include <sys/types.h>
 #include <stdint.h>
+#include <cstddef>
 #include <exception>
 #include <stdexcept>
 

@@ -39,10 +39,10 @@ namespace X10 {
 
 	AddDialog::AddDialog(AddDialogType type, const std::string &name, const X10Devcode &devcode) :
 		m_table(2, 2, false),
-		m_name_label(_("Nazwa urz±dzenia:")),
-		m_devcode_label(_("Kod urz±dzenia:"))
+		m_name_label(_("Nazwa urzÄ…dzenia:")),
+		m_devcode_label(_("Kod urzÄ…dzenia:"))
 	{
-		set_title("Dodaj urz±dzenie");
+		set_title("Dodaj urzÄ…dzenie");
 		set_default_size(200, 50);
 
 		m_table.attach(m_name_label, 0, 1, 0, 1);

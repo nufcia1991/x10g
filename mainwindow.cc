@@ -38,7 +38,7 @@
 
 #define _(str)		Glib::locale_to_utf8(str)
 #define FAILURE(reason)	Gtk::MessageDialog(*this, \
-			_(std::string("Nie uda³o siê wykonaæ operacji: ") + reason), \
+			_(std::string("Nie udaÅ‚o siÄ™ wykonaÄ‡ operacji: ") + reason), \
 			false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK).run();
 
 
@@ -108,16 +108,16 @@ namespace X10
 		add(m_vBox);
 		m_refActionGroup = Gtk::ActionGroup::create();
 
-		m_refActionGroup->add(Gtk::Action::create("Connection", _("Po³±czenie")));
-		m_refActionGroup->add(Gtk::Action::create("Devices", _("Urz±dzenia")));
+		m_refActionGroup->add(Gtk::Action::create("Connection", _("PoÅ‚Ä…czenie")));
+		m_refActionGroup->add(Gtk::Action::create("Devices", _("UrzÄ…dzenia")));
 		m_refActionGroup->add(Gtk::Action::create("Action", _("Operacje")));
 
 		m_refActionGroup->add(Gtk::Action::create("ConnectionConnect", Gtk::Stock::CONNECT, 
-			_("Po³±cz z kontrolerem"), _("£±czy z kontrolerem X10")),
+			_("PoÅ‚Ä…cz z kontrolerem"), _("ÅÄ…czy z kontrolerem X10")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ConnectionConnect_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ConnectionDisconnect", Gtk::Stock::DISCONNECT,
-			_("Roz³±cz z kontrolerem"), _("Roz³±cza z kontrolerem X10")),
+			_("RozÅ‚Ä…cz z kontrolerem"), _("RozÅ‚Ä…cza z kontrolerem X10")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ConnectionDisconnect_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ConnectionSettings", Gtk::Stock::PROPERTIES,
@@ -125,39 +125,39 @@ namespace X10
 			sigc::mem_fun(*this, &X10::MainWindow::on_ConnectionSettings_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ConnectionQuit", Gtk::Stock::QUIT,
-			_("Zakoñcz"), _("Koñczy pracê programu")),
+			_("ZakoÅ„cz"), _("KoÅ„czy pracÄ™ programu")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ConnectionQuit_click));
 
 		m_refActionGroup->add(Gtk::Action::create("DevicesAdd", Gtk::Stock::ADD,
-			_("Dodaj urz±dzenie..."), _("Dodaje urz±dzenie X10")),
+			_("Dodaj urzÄ…dzenie..."), _("Dodaje urzÄ…dzenie X10")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_DevicesAdd_click));
 
 		m_refActionGroup->add(Gtk::Action::create("DevicesRemove", Gtk::Stock::DELETE,
-			_("Usuñ urz±dzenie"), _("Usuwa urz±dzenie X10")),
+			_("UsuÅ„ urzÄ…dzenie"), _("Usuwa urzÄ…dzenie X10")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_DevicesRemove_click));
 
 		m_refActionGroup->add(Gtk::Action::create("DevicesEdit", Gtk::Stock::EDIT,
-			_("Edytuj urz±dzenie"), _("Edytuje skonfigurowane urz±dzenie X10")),
+			_("Edytuj urzÄ…dzenie"), _("Edytuje skonfigurowane urzÄ…dzenie X10")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_DevicesEdit_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ActionOn", Gtk::Stock::YES,
-			_("Zapal"), _("Zapala lampê")),
+			_("Zapal"), _("Zapala lampÄ™")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ActionOn_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ActionOff", Gtk::Stock::NO,
-			_("Zga¶"), _("Gasi lampê")),
+			_("ZgaÅ›"), _("Gasi lampÄ™")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ActionOff_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ActionLight", Gtk::Stock::GO_UP,
-			_("Ja¶niej"), _("Zwiêksza jasno¶æ lampy")),
+			_("JaÅ›niej"), _("ZwiÄ™ksza jasnoÅ›Ä‡ lampy")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ActionLight_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ActionDim", Gtk::Stock::GO_DOWN,
-			_("Ciemniej"), _("Zmniejsza jasno¶æ lampy")),
+			_("Ciemniej"), _("Zmniejsza jasnoÅ›Ä‡ lampy")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ActionDim_click));
 
 		m_refActionGroup->add(Gtk::Action::create("ActionSetBrightness", Gtk::Stock::EXECUTE,
-			_("Ustaw jasno¶æ"), _("Ustawia dowolnie wybran± jasno¶æ lampy")),
+			_("Ustaw jasnoÅ›Ä‡"), _("Ustawia dowolnie wybranÄ… jasnoÅ›Ä‡ lampy")),
 			sigc::mem_fun(*this, &X10::MainWindow::on_ActionSetBrightness_click));
 
 		m_refUIManager = Gtk::UIManager::create();
@@ -170,7 +170,7 @@ namespace X10
 		m_refTreeModel = Gtk::ListStore::create(m_columns);
 		m_treeView.set_model(m_refTreeModel);
 		m_treeView.append_column("Stan", m_columns.m_state);
-		m_treeView.append_column(_("Jasno¶æ"), m_columns.m_brightness);
+		m_treeView.append_column(_("JasnoÅ›Ä‡"), m_columns.m_brightness);
 		m_treeView.append_column("ID", m_columns.m_devcode);
 		m_treeView.append_column("Nazwa", m_columns.m_name);
 
@@ -194,14 +194,14 @@ namespace X10
 		try {
 			m_config.sync();
 		} catch(std::exception &e) {
-			FAILURE(_(std::string("Nie uda³o siê zapisaæ pliku konfiguracyjnego: ") +
+			FAILURE(_(std::string("Nie udaÅ‚o siÄ™ zapisaÄ‡ pliku konfiguracyjnego: ") +
 				e.what()));
 		}
 	}
 
 	void MainWindow::on_ConnectionConnect_click()
 	{
-		m_progress.show_message(_("£±czenie z kontrolerem..."));
+		m_progress.show_message(_("ÅÄ…czenie z kontrolerem..."));
 	
 		m_context.set_maxretry(m_config.get_config_value_as_int("maxretry"));
 		m_context.set_housecode(X10Housecode(m_config.get_config_value_as_string("housecode")[0]));
@@ -211,7 +211,7 @@ namespace X10
 		} catch(std::exception &e) {
 			m_progress.hide();
 			Gtk::MessageDialog(*this, 
-				_(std::string("Nie uda³o po³±czyæ siê z kontrolerem: ") + e.what())
+				_(std::string("Nie udaÅ‚o poÅ‚Ä…czyÄ‡ siÄ™ z kontrolerem: ") + e.what())
 				, false, Gtk::MESSAGE_ERROR, Gtk::BUTTONS_OK).run();
 		}
 
@@ -294,7 +294,7 @@ namespace X10
 		if (iter) {
 			X10Device *d = ((*iter)[m_columns.m_device]);
 			
-			m_progress.show_message(_("Proszê czekaæ..."));
+			m_progress.show_message(_("ProszÄ™ czekaÄ‡..."));
 			try {
 				d->set_on();
 			} catch(std::exception &e) {
@@ -313,7 +313,7 @@ namespace X10
 		if (iter) {
 			X10Device *d = ((*iter)[m_columns.m_device]);
 
-			m_progress.show_message(_("Proszê czekaæ..."));
+			m_progress.show_message(_("ProszÄ™ czekaÄ‡..."));
 
 			try {
 				d->set_off();

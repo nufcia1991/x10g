@@ -28,6 +28,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <typeinfo>
 #include <exception>
 #include <stdexcept>
 

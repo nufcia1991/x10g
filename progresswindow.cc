@@ -42,9 +42,9 @@ namespace X10
 		m_label(message)
 	{
 		if (message == "")
-			m_label.set_text(_("Proszê czekaæ..."));
+			m_label.set_text(_("ProszÄ™ czekaÄ‡..."));
 
-		set_title(_("Proszê czekaæ..."));
+		set_title(_("ProszÄ™ czekaÄ‡..."));
 		set_default_size(200, 75);
 
 		add(m_label);

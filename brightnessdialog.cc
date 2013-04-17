@@ -36,7 +36,7 @@ namespace X10
 	BrightnessDialog::BrightnessDialog(int brightness) :
 		m_brightness(1, 23, 1)
 	{
-		set_title(_("Ustaw jasno¶æ"));
+		set_title(_("Ustaw jasnoÅ›Ä‡"));
 		set_default_size(200, 75);
 
 		m_brightness.set_value(brightness);
