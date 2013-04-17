@@ -9,7 +9,7 @@ X10G = x10g
 all: $(X10G)
 
 $(X10G): $(OBJS)
-	$(LD) $(LDFLAGS) $(OBJS) -o $(X10G)
+	$(LD) $(OBJS) $(LDFLAGS) -o $(X10G)
 
 %.o: %.c
 	$(CXX) $(CXXFLAGS) -c $<
